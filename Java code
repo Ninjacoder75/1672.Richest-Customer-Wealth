@@ -1,0 +1,25 @@
+The given code defines a Java class `Solution` that contains a method `maximumWealth`. This method calculates the maximum wealth of a customer, where each customer has multiple bank accounts. The wealth of a customer is the sum of money in all their accounts, and the method is designed to return the maximum wealth among all customers.
+
+- `accounts` is a 2D array, where each row represents a customer, and each column represents the amount of money in a particular account for that customer.
+- The outer loop iterates over each customer (`i`), and the inner loop calculates the total wealth of that customer by summing all the account values (`j`).
+- The method keeps track of the maximum wealth using the variable `ans`, updating it whenever a customer's wealth exceeds the current maximum.
+- Finally, the method returns the maximum wealth.
+
+# Code Implementation
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+       int ans=0;
+       int m =accounts.length;
+       int n = accounts[0].length;
+        for(int i=0;i<m;i++){
+        int  sum=0;
+            for(int j=0;j<n;j++){
+
+                sum = sum + accounts[i][j];
+            }
+            ans = Math.max(sum,ans);
+            
+        }
+        return ans;
+    }
+}
